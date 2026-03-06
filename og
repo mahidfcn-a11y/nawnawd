@@ -128,12 +128,12 @@ local Camera           = workspace.CurrentCamera
 -- ─── MOBILE DETECT ───────────────────────────────────────────────────────────
 do 
     if State.IsMobile then
-    State.MainWidth  = math.clamp(math.floor(ss.X * 0.98), 480, 560)
-    State.MainHeight = math.clamp(math.floor(ss.Y * 0.94), 600, 780)
-    State.HeaderHeight = 56
-    State.BtnHeight    = 36
-    State.ToggleH      = 38
-    State.FontMult     = 1.15
+    State.MainWidth  = math.clamp(math.floor(ss.X * 1.0), 560, 640)
+State.MainHeight = math.clamp(math.floor(ss.Y * 0.55), 340, 420)
+    State.HeaderHeight = 38
+    State.BtnHeight    = 28
+    State.ToggleH      = 28
+    State.FontMult     = 0.85
     end
 end
 
@@ -672,7 +672,7 @@ do
 
     function Fn.StatRow(parent, items)
         local row = Instance.new("Frame")
-        row.Size = UDim2.new(1,0,0,State.IsMobile and 42 or 48)
+        row.Size = UDim2.new(1,0,0,State.IsMobile and 34 or 48)
         row.BackgroundTransparency = 1
         row.Parent = parent
         local layout = Instance.new("UIListLayout")
@@ -2053,7 +2053,7 @@ local TabDefs = {
     {Name="Info",  Icon="ℹ",   Color=C.TextSub,     Desc="About"},
 }
 
-local NavW = State.IsMobile and 80 or 68
+local NavW = State.IsMobile and 58 or 68
 local contentY = State.HeaderHeight
 
 do
@@ -2136,8 +2136,8 @@ do
         end
     end
 
-    for i,def in ipairs(TabDefs) do
-        local bH = State.IsMobile and 64 or 58
+    for i,def in ipairs(TabDefs) do   
+        local bH = State.IsMobile and 42 or 58
         local btn = Instance.new("TextButton")
         btn.Name = def.Name
         btn.Size = UDim2.new(1,0,0,bH)
