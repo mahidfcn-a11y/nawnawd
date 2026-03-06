@@ -128,8 +128,8 @@ local Camera           = workspace.CurrentCamera
 -- ─── MOBILE DETECT ───────────────────────────────────────────────────────────
 do 
     if State.IsMobile then
-    State.MainWidth  = math.clamp(math.floor(ss.X * 1.0), 560, 640)
-State.MainHeight = math.clamp(math.floor(ss.Y * 0.55), 340, 420)
+    State.MainWidth  = math.clamp(math.floor(ss.X * 0.55), 200, 320)
+State.MainHeight = math.clamp(math.floor(ss.Y * 0.45), 220, 340)
     State.HeaderHeight = 38
     State.BtnHeight    = 28
     State.ToggleH      = 28
