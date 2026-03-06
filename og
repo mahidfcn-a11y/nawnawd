@@ -127,10 +127,11 @@ local Camera           = workspace.CurrentCamera
 
 -- ─── MOBILE DETECT ───────────────────────────────────────────────────────────
 do 
+    State.IsMobile = UserInputService.TouchEnabled and not UserInputService.KeyboardEnabled
+    local ss = Camera.ViewportSize
     if State.IsMobile then
     State.MainWidth  = math.clamp(math.floor(ss.X * 0.55), 200, 320)
-State.MainHeight = math.clamp(math.floor(ss.Y * 0.45), 220, 340)
-    State.HeaderHeight = 38
+    State.MainHeight = math.clamp(math.floor(ss.Y * 0.45), 220, 340)
     State.BtnHeight    = 28
     State.ToggleH      = 28
     State.FontMult     = 0.85
