@@ -2080,7 +2080,9 @@ do
     NavScroll.CanvasSize = UDim2.new(0,0,0,0)
     NavScroll.AutomaticCanvasSize = Enum.AutomaticSize.None
     NavScroll.ScrollingDirection = Enum.ScrollingDirection.Y
-    NavScroll.CanvasSize = UDim2.new(0,0,1,0)
+    NavScroll.CanvasSize = UDim2.new(0,0,0,0)
+    NavScroll.AutomaticCanvasSize = Enum.AutomaticSize.Y
+
     NavScroll.Parent = Sidebar
 
     local NL = Instance.new("UIListLayout")
@@ -2138,7 +2140,7 @@ do
     end
 
     for i,def in ipairs(TabDefs) do   
-        local bH = State.IsMobile and 70 or 65
+        local bH = State.IsMobile and 54 or 52
         local btn = Instance.new("TextButton")
         btn.Name = def.Name
         btn.Size = UDim2.new(1,0,0,bH)
@@ -2161,23 +2163,23 @@ do
         Fn.Corner(dot, 2)
 
         local iconL = Instance.new("TextLabel")
-        iconL.Size = UDim2.new(1,0,0,State.IsMobile and 20 or 22)
-        iconL.Position = UDim2.new(0,0,0,State.IsMobile and 5 or 6)
+        iconL.Size = UDim2.new(1,0,0,State.IsMobile and 18 or 18)
+        iconL.Position = UDim2.new(0,0,0,State.IsMobile and 3 or 4)
         iconL.BackgroundTransparency = 1
         iconL.Text = def.Icon
-        iconL.TextSize = State.IsMobile and 22 or 17
+        iconL.TextSize = State.IsMobile and 18 or 16
         iconL.Font = Enum.Font.GothamBold
         iconL.TextColor3 = (i==1) and def.Color or C.TextMuted
         iconL.ZIndex = 9
         iconL.Parent = btn
 
         local lbl = Instance.new("TextLabel")
-        lbl.Size = UDim2.new(1,0,0,State.IsMobile and 11 or 12)
-        lbl.Position = UDim2.new(0,0,0,State.IsMobile and 26 or 29)
+         lbl.Size = UDim2.new(1,0,0,State.IsMobile and 10 or 11)
+        lbl.Position = UDim2.new(0,0,0,State.IsMobile and 22 or 23)
         lbl.BackgroundTransparency = 1
         lbl.Text = def.Name
         lbl.TextColor3 = (i==1) and def.Color or C.TextMuted
-        lbl.TextSize = Fn.FS(State.IsMobile and 9 or 7)
+        lbl.TextSize = Fn.FS(State.IsMobile and 8 or 7)
         lbl.Font = Enum.Font.GothamBold
         lbl.ZIndex = 9
         lbl.Parent = btn
